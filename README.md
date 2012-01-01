@@ -1,4 +1,4 @@
-Source http://simplegrid.info/
+Original Source http://simplegrid.info/
 
     SimpleGrid - a fork of CSSGrid by Crowd Favorite (https://github.com/crowdfavorite/css-grid)
     http://simplegrid.info
