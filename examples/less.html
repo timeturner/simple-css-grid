@@ -7,57 +7,10 @@ and open the template in the editor.
     <head>
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-        <style rel="stylesheet" type="text/less" >
-            /* 
-             * SimpleGrid - a fork of CSSGrid by Crowd Favorite (https://github.com/crowdfavorite/css-grid)
-             * http://simplegrid.info
-             * by Conor Muirhead (http://conor.cc) of Early LLC (http://earlymade.com)	
-             * License: http://creativecommons.org/licenses/MIT/	
-            */
-            @layoutwidth: 1236px;
-            @marginleft: 20px;
-            @gridwidth: @layoutwidth - @marginleft;
-            @sixths: (@gridwidth - (5 * @marginleft)) / 6;
-            @thirds: @sixths * 2 + @marginleft;
-            @twothirds: @thirds * 2 + @marginleft;
-            @fivesixths: @sixths * 5 + @marginleft*4;
-            @quarters: (@gridwidth - (3 * @marginleft)) / 4;
-            @threequarters: @quarters * 3 + (2 * @marginleft);
-            @halves: (@gridwidth - @marginleft) / 2;
-
-            /* Containers */
-            body { font-size: 0.875em; padding: 0; }
-            .grid{ margin:0 auto; padding: 0 10px; width: @gridwidth; }
-            .grid .row{ clear:left; }
-
-            /* Slots Setup */
-            .slot-0,.slot-1,.slot-2,.slot-3,.slot-4,.slot-5,.slot-0-1,.slot-0-1-2,.slot-0-1-2-3,.slot-0-1-2-3-4,.slot-0-1-2-3-4-5,.slot-1-2,.slot-1-2-3,.slot-1-2-3-4,.slot-1-2-3-4-5,.slot-2-3,.slot-2-3-4,.slot-2-3-4-5,.slot-3-4,.slot-3-4-5,.slot-4-5,.slot-6,.slot-7,.slot-8,.slot-9,.slot-6-7,.slot-6-7-8,.slot-6-7-8-9,.slot-7-8,.slot-7-8-9,.slot-8-9{ display:inline; float:left; margin-left: @marginleft; }
-
-            /* 6-Col Grid Sizes */
-            .slot-0,.slot-1,.slot-2,.slot-3,.slot-4,.slot-5{ width: @sixths; } /* Sixths */
-            .slot-0-1,.slot-1-2,.slot-2-3,.slot-3-4,.slot-4-5{ width: @thirds; } /* Thirds */
-            .slot-0-1-2-3,.slot-1-2-3-4,.slot-2-3-4-5{ width: @twothirds; } /* Two-Thirds */
-            .slot-0-1-2-3-4,.slot-1-2-3-4-5{ width:@fivesixths; } /* Five-Sixths */
-
-            /* 4-Col Grid Sizes */
-            .slot-6,.slot-7,.slot-8,.slot-9{ width: @quarters; } /* Quarters */
-            .slot-6-7-8,.slot-7-8-9{ width: @threequarters; } /* Three-Quarters */
-
-            /* 6-Col/4-Col Shared Grid Sizes */
-            .slot-0-1-2,.slot-1-2-3,.slot-2-3-4,.slot-3-4-5, .slot-6-7,.slot-7-8,.slot-8-9{ width: @halves; } /* Halves */
-            .slot-0-1-2-3-4-5, .slot-6-7-8-9{ width: 100%; } /* Full-Width */
-
-            /* Zeroing Out Leftmost Slot Margins */
-            .slot-0,.slot-0-1,.slot-0-1-2,.slot-0-1-2-3,.slot-0-1-2-3-4,.slot-0-1-2-3-4-5,.slot-6,.slot-6-7,.slot-6-7-8,.slot-6-7-8-9,.slot-1 .slot-1,.slot-1-2 .slot-1,.slot-1-2 .slot-1-2,.slot-1-2-3 .slot-1,.slot-1-2-3 .slot-1-2,.slot-1-2-3 .slot-1-2-3,.slot-1-2-3-4 .slot-1,.slot-1-2-3-4 .slot-1-2,.slot-1-2-3-4 .slot-1-2-3,.slot-1-2-3-4 .slot-1-2-3-4,.slot-1-2-3-4-5 .slot-1,.slot-1-2-3-4-5 .slot-1-2,.slot-1-2-3-4-5 .slot-1-2-3,.slot-1-2-3-4-5 .slot-1-2-3-4,.slot-1-2-3-4-5 .slot-1-2-3-4-5,.slot-2 .slot-2,.slot-2-3 .slot-2,.slot-2-3 .slot-2-3,.slot-2-3-4 .slot-2,.slot-2-3-4 .slot-2-3,.slot-2-3-4 .slot-2-3-4,.slot-2-3-4-5 .slot-2,.slot-2-3-4-5 .slot-2-3,.slot-2-3-4-5 .slot-2-3-4,.slot-2-3-4-5 .slot-2-3-4-5,.slot-3 .slot-3,.slot-3-4 .slot-3,.slot-3-4 .slot-3-4,.slot-3-4-5 .slot-3,.slot-3-4-5 .slot-3-4,.slot-3-4-5 .slot-3-4-5,.slot-4 .slot-4,.slot-4-5 .slot-4,.slot-4-5 .slot-4-5,.slot-5 .slot-5,.slot-7 .slot-7,.slot-7-8 .slot-7,.slot-7-8 .slot-7-8,.slot-7-8-9 .slot-7,.slot-7-8-9 .slot-7-8,.slot-7-8-9 .slot-7-8-9,.slot-8 .slot-8,.slot-8-9 .slot-8,.slot-8-9 .slot-8-9{ margin-left:0 !important; } /* Important is to avoid repeating this in larger screen css files */
-
-            /* Row Clearfix */
-            .grid .row:after{ visibility:hidden; display:block; font-size:0; content:" "; clear:both; height:0; }
-            .grid .row{ zoom:1; }
-            body {font-family: sans-serif;margin: auto;}
-            .row {margin: 10px 0 10px 0;}
+        <link rel="stylesheet/less" type="text/css" href="grid.less">
+        <style type="text/css">
+            .grid .row{margin: 12px 0 0 0}
         </style>
-        <script src="less.js" type="text/javascript"></script>
     </head>
     <body>
 
@@ -139,5 +92,6 @@ and open the template in the editor.
                 })
             })
         </script>
+        <script src="less.js" type="text/javascript"></script>
     </body>
 </html>
